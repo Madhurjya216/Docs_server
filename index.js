@@ -1,7 +1,7 @@
 require("dotenv").config();
 const express = require("express");
 const app = express();
-const port = 9500;
+const port = process.env.PORT;
 const cors = require("cors");
 const db = require("./db");
 const bodyParser = require("body-parser");
@@ -31,5 +31,5 @@ app.use("/delete/:id", deleteRoute);
 
 // server listening
 app.listen(port, () => {
-  console.log(`Server is listening at:${port}`);
+  console.log(`Server is listening`);
 });
